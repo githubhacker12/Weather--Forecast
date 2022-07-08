@@ -10,6 +10,20 @@ body {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;     
+  height: 10px;         
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);      
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(110, 153, 194);    
+  border-radius: 2px;      
+}
+
 .mainheading {
   font-size: 50px;
   letter-spacing: 30px;
@@ -21,6 +35,63 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-animation:colorchange 10s ;
+  /* -webkit-animation:colorchange 20s infinite alternate; */
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    
+    color: rgb(0, 0, 0);
+  }
+  
+  
+  10% {
+    
+    color: #0b445c;
+  }
+  
+  20% {
+    
+    color: #1a2b64;
+  }
+  
+  30% {
+    
+    color: rgb(14, 58, 48);
+  }
+  
+  40% {
+    
+    color: #202d3a;
+  }
+
+  50% {
+    
+    color: rgb(0, 0, 0);
+  }
+  
+  
+  60% {
+    
+    color: #0b445c;
+  }
+  
+  70% {
+    
+    color: #1a2b64;
+  }
+  
+  80% {
+    
+    color: rgb(14, 58, 48);
+  }
+  
+  90% {
+    
+    color: #202d3a;
+  }
+  
 }
 
 /* css of section (present-weather-details) */
@@ -72,8 +143,7 @@ body {
 }
 
 .place-container {
-  /* text-align: right; */
-  margin-top: 10px;
+  margin-top: -20px;
 }
 
 .place-container .time-zone {
@@ -112,13 +182,15 @@ body {
   background-color: rgba(1, 8, 17, 0.5);
   border-color: #99c5e015;
   box-shadow: 2px 3px 4px 1px #31424c, -2px -3px 4px 1px #99c5e0c5;
-  transition: all 0.2s linear;
+  transition: all 0.3s linear;
 }
 
 .main-button:hover,
 .main-button:active {
   background-color: rgba(0, 0, 0, 0.612);
   box-shadow: inset 1px 1px 5px 1px #31424c, inset -1px -1px 5px 1px #99c5e0c5;
+  font-weight: bolder;
+  color: rgb(113, 205, 238);
 }
 
 /* ----form----- */
@@ -143,6 +215,11 @@ body {
   border-color: #99c5e015;
   border-color: black;
   box-shadow: 2px 3px 4px 1px #31424c, -2px -3px 4px 1px #99c5e0c5;
+  outline: none;
+}
+
+.weatherLocation input:hover {
+  border-color: rgb(137, 189, 231);
 }
 
 .weatherLocation button {
@@ -161,8 +238,10 @@ body {
 .weatherLocation button:hover,
 .weatherLocation button:active {
   background-color: rgba(0, 0, 0, 0.612);
-  color: white;
+  color: rgb(255, 255, 255);
   box-shadow: inset 1px 1px 5px 1px #31424c, inset -1px -1px 5px 1px #99c5e0c5;
+  border-color: rgb(70, 140, 187);
+  font-weight: bolder;
 }
 
 ::placeholder {
@@ -190,7 +269,6 @@ body {
   width: 100%;
   align-items: center;
   justify-content: center;
-  overflow-y: hidden;
   position: relative;
   bottom: 0;
   left: 0;
@@ -259,7 +337,7 @@ body {
   .future-forecast {
     justify-content: start;
     align-items: none;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
   }
 }
 
